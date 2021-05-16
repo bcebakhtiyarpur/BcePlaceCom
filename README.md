@@ -14,11 +14,7 @@ BcePlaceCom is a native Android application. This application will help the stud
 
 ## How To Contribute
 
-1. Fork the project
-2. Make your changes and push the changes to **your** forked repository
-3. Send a pull-request **dev** branch and ensure the pull request follows the template.
-4. At the moment we are adding all the new features to the **dev** branch, and pushing only fully features to our
-**master/main** branch.
+Read [CONTRIBUTION.md](https://github.com/bcebakhtiyarpur/BcePlaceCom/blob/dev/CONTRIBUTION.md)
 
 ## Documentation
 
