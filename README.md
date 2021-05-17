@@ -1,6 +1,9 @@
 # BcePlaceCom (Android App)
 
-BcePlaceCom is a native Android application. This application will help the student to find the opportunity(Jobs/Internships) and get the placement. The application will follow MVVM architecture and is written in Kotlin. This project comes under Bce Bakhtiyarpur College of Engineering Campus.
+BcePlaceCom is a native Android application which intetnded to help the students to find the opportunity(Jobs/Internships) and inhance carrier growth. Entrie application is works on the MVVM architecture, Data binding, View Binding and Firebase Database. Contributers are feel free to write the code in "JAVA" as well as "KOTLIN". 
+
+# Page1-> Activity which contains the Signup & Login Page
+# Page 2-> List of job opportunity with the Filter(consist branch name) and There is also a bottom navigation
 
 
 ## Building The Code
