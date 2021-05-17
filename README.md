@@ -2,8 +2,13 @@
 
 BcePlaceCom is a native Android application which intetnded to help the students to find the opportunity(Jobs/Internships) and inhance carrier growth. Entrie application is works on the MVVM architecture, Data binding, View Binding and Firebase Database. Contributers are feel free to write the code in "JAVA" as well as "KOTLIN". 
 
-# Page1-> Activity which contains the Signup & Login Page
-# Page 2-> List of job opportunity with the Filter(consist branch name) and There is also a bottom navigation
+# Basic Features
+  - User Sign Up and Login(We will use firbase to store user Information)
+  - Job Section(all job should be shown in recyle view)
+  - News Section or Notification Section
+  - Job Section Should be visible for only Registered users.
+  - User can filter Job with branch name(CSE,ME,CE,ME) and Job type(Internship,Fulltime).
+  - If you have any new feature idea create issue with feature tag.
 
 
 ## Building The Code
