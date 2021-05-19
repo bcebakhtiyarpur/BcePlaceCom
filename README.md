@@ -1,13 +1,13 @@
 # BcePlaceCom (Android App)
 
-BcePlaceCom is a native Android application which intetnded to help the students to find the opportunity(Jobs/Internships) and inhance carrier growth. Entrie application is works on the MVVM architecture, Data binding, View Binding and Firebase Database. Contributers are feel free to write the code in "JAVA" as well as "KOTLIN". 
+BcePlaceCom is a native Android application which intended to help the students to find the opportunity(Jobs/Internships) and enhance carrier growth. Entire application is works on the MVVM architecture, Data binding, View Binding and Firebase Database. Contributors are feel free to write the code in "JAVA" as well as "KOTLIN". 
 
 # Basic Features
-  - User Sign Up and Login(We will use firbase to store user Information)
-  - Job Section(all job should be shown in recyle view)
+  - User Sign Up and Login(We will use Firebase to store user Information)
+  - Job Section(all job should be shown in recycler view)
   - News Section or Notification Section
   - Job Section Should be visible for only Registered users.
-  - User can filter Job with branch name(CSE,ME,CE,ME) and Job type(Internship,Fulltime).
+  - User can filter Job with branch name(CSE,ME,CE,ME) and Job type(Internship, Full-Time).
   - If you have any new feature idea create issue with feature tag.
 
 
