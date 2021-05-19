@@ -44,13 +44,14 @@ class LoginActivity : AppCompatActivity() {
     }
 
     // Github Logo on Dark & Light Theme
-    @TargetApi(30)
+    @RequiresApi(29)
     when(resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK){
       Configuration.UI_MODE_NIGHT_YES->{
-        binding.loginUsingGithub.setImageResource(R.drawable.github_sign_in_logo_dark)
+        binding.loginUsingGithub.setBackgroundResource(R.drawable.github_sign_in_logo_dark)
+        binding.loginUsingGithub
       }
       Configuration.UI_MODE_NIGHT_NO->{
-        binding.loginUsingGithub.setImageResource(R.drawable.github_sign_in_logo_light)
+        binding.loginUsingGithub.setBackgroundResource(R.drawable.github_sign_in_logo_light)
       }
     }
 
