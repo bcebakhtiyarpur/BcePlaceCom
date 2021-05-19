@@ -3,20 +3,99 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="10sp"
         tools:context=".ui.auth.SignUpActivity">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/sign_up_fragment"
-            android:name="com.dev.bcepedia.bceplacecom.ui.auth.SignUpFragment"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="56dp"
+            android:text="@string/sign_up_already_signed_in"
+            android:textSize="40sp"
             app:layout_constraintTop_toTopOf="parent"
-            tools:layout="@layout/sign_up_fragment" />
+            tools:layout_editor_absoluteX="0dp" />
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <TextView
+            android:id="@+id/new_hear_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:text="@string/sign_up_login_in_here"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/sign_up_email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.147" />
+
+        <TextView
+            android:id="@+id/sign_in_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:contextClickable="true"
+            android:textColor="@color/blue_500"
+            android:text="@string/login_sign_in"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/sign_up_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.013"
+            app:layout_constraintStart_toEndOf="@+id/new_hear_text_view"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.144" />
+
+        <EditText
+            android:id="@+id/sign_up_email"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="64dp"
+            android:autofillHints="Email"
+            android:ems="10"
+            android:hint="@string/login_id"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toTopOf="@+id/sign_up_pass"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/sign_up_pass"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="280dp"
+            android:autofillHints="Password"
+            android:ems="10"
+            android:hint="@string/login_password"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/sign_up_button"
+            android:layout_width="167dp"
+            android:layout_height="60dp"
+            android:shadowColor="@color/white"
+            android:text="@string/sign_up_sign_up_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_pass"
+            app:layout_constraintVertical_bias="0.19" />
+
+        <TextView
+            android:id="@+id/terms_of_uses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up_terms_of_use"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_button"
+            app:layout_constraintVertical_bias="0.114" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
