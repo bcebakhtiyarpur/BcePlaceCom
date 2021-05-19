@@ -58,7 +58,7 @@ class LoginActivity : AppCompatActivity() {
   }
   private fun signWithEmailAndPassword(email: String, password: String){
     auth.signInWithEmailAndPassword(email, password)
-      .addOnCompleteListener(this){it->
+      .addOnCompleteListener(this){
         if(it.isSuccessful){
           // TODO User sign in success
           val user = auth.currentUser
