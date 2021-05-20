@@ -19,6 +19,18 @@ BcePlaceCom is a native Android application which intended to help the students 
 4. Browse to the directory where you cloned the project and click OK.
 5. Let Android Studio import the project and you are good to go!
 
+## Unit Testing
+* Run unit test to check whether everything is configured.
+1. Open BcePlaceCom/app/src/androidTest/java/com.dev.bcepedia.bceplacecom in android studio
+3. Run ActivityLaunchTest
+
+
+## Firebase Configuration
+1. Create Project on https:://console.firebase.google.com
+1. Download google-services.json in the Project Settings and place it BcePlaceCom/app
+2. Add Sign In Methods to Authentication Tab on Firebase
+* To use Google Sign In make sure to configure SHA-1 certification
+More Info https://firebase.google.com/docs/auth
 
 ## How To Contribute
 
