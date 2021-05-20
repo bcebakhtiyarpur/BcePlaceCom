@@ -26,29 +26,5 @@ class ExampleInstrumentedTest {
     val appContext = InstrumentationRegistry.getInstrumentation().targetContext
     assertEquals("com.dev.bcepedia.bceplacecom", appContext.packageName)
   }
-  @RunWith(AndroidJUnit4::class)
-  @LargeTest
-  class MainActivityTest{
-    @Test fun mainActivityLaunch(){
-      val scenario = ActivityScenario.launch(MainActivity::class.java)
-      assertEquals(scenario.result.resultCode, Activity.RESULT_OK)
-    }
-  }
 
-  @RunWith(AndroidJUnit4::class)
-  @LargeTest
-  class SignUpActivityTest{
-    @Test fun signUpActivityLaunch(){
-      val scenario = ActivityScenario.launch(SignUpActivity::class.java)
-      assertEquals(scenario.result.resultCode, Activity.RESULT_OK)
-    }
-  }
-  @RunWith(AndroidJUnit4::class)
-  @LargeTest
-  class LoginActivityTest{
-    @Test fun loginActivityLaunch(){
-      val scenario = ActivityScenario.launch(LoginActivity::class.java)
-      assertEquals(scenario.result.resultCode, Activity.RESULT_OK)
-    }
-  }
 }
