@@ -21,6 +21,10 @@ class SignUpActivity : AppCompatActivity() {
     binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_up)
     auth = Firebase.auth
 
+    if(auth.currentUser != null){
+      profileActivity()
+    }
+
     // Sign In Button
     binding.signInButton.setOnClickListener {
       val intent: Intent = Intent(this, LoginActivity::class.java)
@@ -39,8 +43,8 @@ class SignUpActivity : AppCompatActivity() {
     auth.createUserWithEmailAndPassword(email, password)
       .addOnCompleteListener(this){it->
         if (it.isSuccessful){
-          // TODO Sign Up success
           Toast.makeText(baseContext, "Account Created", Toast.LENGTH_SHORT).show()
+          profileActivity()
         }else{
           // TODO User Sign Up Failed
           Toast.makeText(
@@ -48,6 +52,11 @@ class SignUpActivity : AppCompatActivity() {
             .show()
         }
       }
+  }
+
+  fun profileActivity() {
+    val intent = Intent(this, ProfileActivity::class.java)
+    startActivity(intent)
   }
 
 }
