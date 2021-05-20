@@ -14,4 +14,5 @@
     <string name="sign_up_terms_of_use">By Clicking You are agreeing to Terms of Uses</string>
     <string name="sign_up_already_signed_in">Already Sign In</string>
     <string name="sign_up_login_in_here">Login in here</string>
+    <string name="splash_screen_image">Splash Screen Image</string>
 </resources>

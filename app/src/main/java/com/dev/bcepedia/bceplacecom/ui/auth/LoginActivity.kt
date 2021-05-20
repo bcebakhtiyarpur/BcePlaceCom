@@ -1,10 +1,7 @@
 package com.dev.bcepedia.bceplacecom.ui.auth
 
-import android.annotation.TargetApi
-import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -12,7 +9,6 @@ import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import com.dev.bcepedia.bceplacecom.R
 import com.dev.bcepedia.bceplacecom.databinding.ActivityLoginBinding
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -55,7 +51,6 @@ class LoginActivity : AppCompatActivity() {
       }
     }
 
-    binding.root
   }
   private fun signWithEmailAndPassword(email: String, password: String){
     auth.signInWithEmailAndPassword(email, password)

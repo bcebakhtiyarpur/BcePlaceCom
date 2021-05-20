@@ -33,9 +33,6 @@ class SignUpActivity : AppCompatActivity() {
       val pass: String = binding.signUpPass.text.toString()
       createUserWithEmailAndPassword(email, pass)
     }
-
-
-    binding.root
   }
 
   private fun createUserWithEmailAndPassword(email: String, password: String){

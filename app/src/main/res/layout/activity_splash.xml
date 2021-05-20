@@ -8,12 +8,11 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <fragment
-            android:id="@+id/home_fragment"
+        <ImageView
+            android:background="@drawable/splash_screen"
+            android:src="@drawable/splash_screen"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:name="com.dev.bcepedia.bceplacecom.ui.home.HomeFragment"
-            tools:layout="@layout/home_fragment"/>
-
+            android:contentDescription="@string/splash_screen_image" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
