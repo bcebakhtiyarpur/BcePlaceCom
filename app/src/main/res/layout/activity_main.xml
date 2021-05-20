@@ -12,7 +12,9 @@
             android:id="@+id/home_fragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:name="com.dev.bcepedia.bceplacecom.ui.home.HomeFragment"
+            app:navGraph = "@navigation/nav_graph"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            app:defaultNavHost="true"
             tools:layout="@layout/home_fragment"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
