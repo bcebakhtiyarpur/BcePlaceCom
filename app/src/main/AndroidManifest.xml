@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dev.bcepedia.bceplacecom">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BcePlaceCom">
+        <activity android:name=".ui.auth.ProfileActivity" />
         <activity
             android:name=".ui.auth.SignUpActivity"
             android:label="@string/title_activity_sign_up"
