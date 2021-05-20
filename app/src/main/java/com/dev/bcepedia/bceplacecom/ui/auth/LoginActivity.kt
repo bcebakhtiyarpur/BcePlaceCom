@@ -42,19 +42,31 @@ class LoginActivity : AppCompatActivity() {
     }
 
     // Sign In Button
-    binding.signInButton.setOnClickListener{
+    binding.signInButton.setOnClickListener {
       val email: String = binding.loginEmail.text.toString()
       val pass: String = binding.loginPass.text.toString()
-      signWithEmailAndPassword(email, pass)
+
+      if (email.isNotEmpty() && pass.isNotEmpty()) {
+        signWithEmailAndPassword(email, pass)
+      } else {
+        Toast.makeText(
+          baseContext, "Fill the required Fields", Toast.LENGTH_SHORT
+        ).show()
+      }
     }
     // Google Sign In Button
-//    binding.loginUsingGoogle.setOnClickListener{
-//      signInWithGoogle()
-//    }
+    binding.loginUsingGoogle.setOnClickListener {
+      signInWithGoogle()
+    }
+
+    // Github Sign In Button
+    binding.loginUsingGithub.setOnClickListener {
+      signInWithGithub()
+    }
 
     // Github Logo on Dark & Light Theme
     @RequiresApi(29)
-    when(resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK){
+    when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
       Configuration.UI_MODE_NIGHT_YES -> {
         binding.loginUsingGithub.setBackgroundResource(R.drawable.github_sign_in_logo_dark)
         binding.loginUsingGithub
@@ -65,17 +77,18 @@ class LoginActivity : AppCompatActivity() {
     }
 
   }
-  private fun signWithEmailAndPassword(email: String, password: String){
+
+  private fun signWithEmailAndPassword(email: String, password: String) {
     auth.signInWithEmailAndPassword(email, password)
-      .addOnCompleteListener(this){
-        if(it.isSuccessful){
+      .addOnCompleteListener(this) {
+        if (it.isSuccessful) {
           // User sign in success
           val user = auth.currentUser
           Toast.makeText(
             baseContext, "Signed In as: ${user!!.email}", Toast.LENGTH_SHORT
           ).show()
           profileActivity()
-        }else{
+        } else {
           // TODO User Sign in Failed
           Toast.makeText(
             baseContext, "Signed In Failed: ${it.exception}", Toast.LENGTH_SHORT
@@ -83,106 +96,103 @@ class LoginActivity : AppCompatActivity() {
         }
       }
   }
-//  private fun signInWithGoogle(){
-//    val googleSignInOption = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-//      .requestIdToken(R.string.default_web_client_id.toString())
-//      .requestEmail()
-//      .build()
-//
-//    val googleSignInClient = GoogleSignIn.getClient(this, googleSignInOption)
-//
-//    val signInIntent = googleSignInClient.signInIntent
-//    startActivityForResult(signInIntent, RC_SIGN_IN)
-//
-//  }
 
-//  override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//    super.onActivityResult(requestCode, resultCode, data)
-//
-//    if(requestCode == RC_SIGN_IN){
-//      val tsk = GoogleSignIn.getSignedInAccountFromIntent(data)
-//      try{
-//        val account = tsk.getResult(ApiException::class.java)!!
-//        firebaseAuthWithGoogle(account.idToken!!)
-//      }catch (e: ApiException){
-//        Toast.makeText(baseContext, "Failed to login: $e", Toast.LENGTH_SHORT).show()
-//      }
-//    }
-//  }
+  private fun signInWithGoogle() {
+    val googleSignInOption = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+      .requestIdToken(R.string.default_web_client_id.toString())
+      .requestEmail()
+      .build()
 
-//  private fun firebaseAuthWithGoogle(token: String){
-//    val credential = GoogleAuthProvider.getCredential(token, null)
-//    auth.signInWithCredential(credential)
-//      .addOnCompleteListener(this){ it->
-//        if(it.isSuccessful){
-//          // Sign In Successful
-//          val user = auth.currentUser
-//          Toast.makeText(
-//            baseContext, "Failed to login: ${user!!.email}", Toast.LENGTH_SHORT
-//          ).show()
-//          profileActivity()
-//        }else{
-//          // TODO Failed to Sign in
-//          Toast.makeText(
-//            baseContext, "Failed to login: ${it.exception}", Toast.LENGTH_SHORT
-//          ).show()
-//        }
-//      }
-//  }
+    val googleSignInClient = GoogleSignIn.getClient(this, googleSignInOption)
 
-//  private fun signInWithGithub(){
-//
-//    val currentUser = auth.currentUser
-//
-//    if(currentUser != null){
-//      Toast.makeText(baseContext, "User Already Signed In", Toast.LENGTH_SHORT).show()
-//      return
-//    }
-//
-//    val provider = OAuthProvider.newBuilder("github.com")
-//
-//    auth.startActivityForSignInWithProvider(this, provider.build())
-//    val pendingResultTask: Task<AuthResult>? = auth.pendingAuthResult
-//    if (pendingResultTask != null) {
-//      pendingResultTask
-//        .addOnSuccessListener {
-//          // User is signed in.
-//          // IdP data available in
-//          // authResult.getAdditionalUserInfo().getProfile().
-//          // The OAuth access token can also be retrieved:
-//          // authResult.getCredential().getAccessToken().
-//        }
-//        .addOnFailureListener {
-//          // TODO Handle failure.
-//        }
-//    } else {
-//      // Handle Pending
-//      Toast.makeText(baseContext, "Request Pending...", Toast.LENGTH_SHORT).show()
-//    }
-//  }
+    val signInIntent = googleSignInClient.signInIntent
+    startActivityForResult(signInIntent, RC_SIGN_IN)
 
-  public override fun onStart(){
+  }
+
+  override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    super.onActivityResult(requestCode, resultCode, data)
+
+    if (requestCode == RC_SIGN_IN) {
+      val tsk = GoogleSignIn.getSignedInAccountFromIntent(data)
+      try {
+        val account = tsk.getResult(ApiException::class.java)!!
+        firebaseAuthWithGoogle(account.idToken!!)
+      } catch (e: ApiException) {
+        Toast.makeText(baseContext, "Failed to login: $e", Toast.LENGTH_SHORT).show()
+      }
+    }
+  }
+
+  private fun firebaseAuthWithGoogle(token: String) {
+    val credential = GoogleAuthProvider.getCredential(token, null)
+    auth.signInWithCredential(credential)
+      .addOnCompleteListener(this) { it ->
+        if (it.isSuccessful) {
+          // Sign In Successful
+          val user = auth.currentUser
+          Toast.makeText(
+            baseContext, "Failed to login: ${user!!.email}", Toast.LENGTH_SHORT
+          ).show()
+          profileActivity()
+        } else {
+          // TODO Failed to Sign in
+          Toast.makeText(
+            baseContext, "Failed to login: ${it.exception}", Toast.LENGTH_SHORT
+          ).show()
+        }
+      }
+  }
+
+  private fun signInWithGithub() {
+
+    val currentUser = auth.currentUser
+
+    if (currentUser != null) {
+      Toast.makeText(baseContext, "User Already Signed In", Toast.LENGTH_SHORT).show()
+      return
+    }
+
+    val provider = OAuthProvider.newBuilder("github.com")
+
+    auth.startActivityForSignInWithProvider(this, provider.build())
+    val pendingResultTask: Task<AuthResult>? = auth.pendingAuthResult
+    if (pendingResultTask != null) {
+      pendingResultTask
+        .addOnSuccessListener {
+          // User is signed in.
+          // IdP data available in
+          // authResult.getAdditionalUserInfo().getProfile().
+          // The OAuth access token can also be retrieved:
+          // authResult.getCredential().getAccessToken().
+        }
+        .addOnFailureListener {
+          // TODO Handle failure.
+        }
+    } else {
+      // Handle Pending
+      Toast.makeText(baseContext, "Request Pending...", Toast.LENGTH_SHORT).show()
+    }
+  }
+
+  public override fun onStart() {
     super.onStart()
     // Checking whether user is signed in or not
     val currentUser = auth.currentUser
-    if(currentUser != null){
+    if (currentUser != null) {
       // user already signed in
       Toast.makeText(baseContext, "Already Signed In", Toast.LENGTH_SHORT).show()
       profileActivity()
     }
   }
 
-  fun profileActivity(){
+  fun profileActivity() {
     val intent = Intent(this, ProfileActivity::class.java)
     startActivity(intent)
   }
 
-  companion object{
+  companion object {
     const val RC_SIGN_IN = 9001
   }
-
-}
-
-private fun <TResult> Task<TResult>?.addOnCompleteListener(onSuccessListener: OnSuccessListener<TResult>) {
 
 }
