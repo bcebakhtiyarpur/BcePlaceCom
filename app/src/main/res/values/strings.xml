@@ -15,4 +15,7 @@
     <string name="sign_up_already_signed_in">Already Sign In</string>
     <string name="sign_up_login_in_here">Login in here</string>
     <string name="splash_screen_image">Splash Screen Image</string>
+    <string name="profile_welcome">Welcome</string>
+    <string name="profile_sign_out">Sign Out</string>
+    <string name="home_sign_in_button">Sign In</string>
 </resources>
