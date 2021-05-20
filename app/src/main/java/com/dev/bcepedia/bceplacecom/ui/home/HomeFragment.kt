@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.ActivityNavigator
+import androidx.navigation.fragment.findNavController
 import com.dev.bcepedia.bceplacecom.R
 import com.dev.bcepedia.bceplacecom.databinding.HomeFragmentBinding
 
@@ -23,7 +25,9 @@ class HomeFragment : Fragment() {
     homeFragmentBinding = DataBindingUtil.inflate(
       inflater, R.layout.home_fragment, container, false)
 
-
+    homeFragmentBinding.homeSignButton.setOnClickListener {
+      findNavController().navigate(R.id.action_homeFragment_to_loginActivity)
+    }
 
     return homeFragmentBinding.root
   }
