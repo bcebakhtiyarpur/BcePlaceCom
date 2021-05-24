@@ -15,18 +15,19 @@
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_splash"
-            android:theme="@style/Theme.BcePlaceCom.Fullscreen" />
+            android:theme="@style/Theme.BcePlaceCom" />
 
         <activity android:name=".ui.auth.ProfileActivity" />
         <activity
             android:name=".ui.auth.SignUpActivity"
             android:label="@string/title_activity_sign_up"
-            android:theme="@style/Theme.BcePlaceCom.NoActionBar" />
-        <activity android:name=".ui.auth.LoginActivity" />
+            android:theme="@style/Theme.BcePlaceCom" />
+        <activity android:name=".ui.auth.LoginActivity"
+            android:label="@string/title_activity_sign_in"
+            android:theme="@style/Theme.BcePlaceCom" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
