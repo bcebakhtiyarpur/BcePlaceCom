@@ -20,7 +20,7 @@ BcePlaceCom is a native Android application which intended to help the students 
 5. Let Android Studio import the project and you are good to go!
 
 ## Unit Testing
-* Run unit test to check whether everything is configured.
+* Run unit test to check everything is configured.
 1. Open BcePlaceCom/app/src/androidTest/java/com.dev.bcepedia.bceplacecom in android studio
 3. Run ActivityLaunchTest
 
