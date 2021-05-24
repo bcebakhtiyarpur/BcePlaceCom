@@ -26,4 +26,17 @@
     <style name="Theme.BcePlaceCom.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.BcePlaceCom.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.BcePlaceCom.Fullscreen" parent="Theme.BcePlaceCom">
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="ThemeOverlay.BcePlaceCom.FullscreenContainer"
+        parent="Theme.MaterialComponents.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+
+        <item name="android:windowActionBarOverlay">false</item>
+    </style>
 </resources>

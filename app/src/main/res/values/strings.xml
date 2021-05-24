@@ -18,4 +18,8 @@
     <string name="profile_welcome">Welcome</string>
     <string name="profile_sign_out">Sign Out</string>
     <string name="home_sign_in_button">Sign In</string>
+    <string name="title_activity_splash">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="splash_bce_logo">Splash BCE Logo</string>
 </resources>

@@ -154,7 +154,7 @@ class LoginActivity : AppCompatActivity() {
 
     if (currentUser != null) {
       Toast.makeText(baseContext, "User Already Signed In", Toast.LENGTH_SHORT).show()
-      return
+      profileActivity()
     }
 
     val provider = OAuthProvider.newBuilder("github.com")

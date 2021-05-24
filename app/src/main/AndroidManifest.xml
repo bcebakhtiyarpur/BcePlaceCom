@@ -11,13 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BcePlaceCom">
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_splash"
+            android:theme="@style/Theme.BcePlaceCom.Fullscreen" />
+
         <activity android:name=".ui.auth.ProfileActivity" />
         <activity
             android:name=".ui.auth.SignUpActivity"
             android:label="@string/title_activity_sign_up"
             android:theme="@style/Theme.BcePlaceCom.NoActionBar" />
         <activity android:name=".ui.auth.LoginActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
