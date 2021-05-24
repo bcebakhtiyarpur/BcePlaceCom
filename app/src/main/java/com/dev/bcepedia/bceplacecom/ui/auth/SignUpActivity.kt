@@ -27,8 +27,11 @@ class SignUpActivity : AppCompatActivity() {
 
     // Sign In Button
     binding.signInButton.setOnClickListener {
-      val intent: Intent = Intent(this, LoginActivity::class.java)
-      startActivity(intent)
+      val intent = Intent(this, LoginActivity::class.java)
+      if(shouldUpRecreateTask(intent)){
+        startActivity(intent)
+      }
+      navigateUpTo(intent)
     }
 
     // Sign Up Button
@@ -41,7 +44,7 @@ class SignUpActivity : AppCompatActivity() {
 
   private fun createUserWithEmailAndPassword(email: String, password: String){
     auth.createUserWithEmailAndPassword(email, password)
-      .addOnCompleteListener(this){it->
+      .addOnCompleteListener(this){
         if (it.isSuccessful){
           Toast.makeText(baseContext, "Account Created", Toast.LENGTH_SHORT).show()
           profileActivity()
@@ -54,9 +57,12 @@ class SignUpActivity : AppCompatActivity() {
       }
   }
 
-  fun profileActivity() {
+  private fun profileActivity() {
     val intent = Intent(this, ProfileActivity::class.java)
-    startActivity(intent)
+    if(shouldUpRecreateTask(intent)){
+      startActivity(intent)
+    }
+    navigateUpTo(intent)
   }
 
 }

@@ -12,7 +12,6 @@ import com.dev.bcepedia.bceplacecom.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -43,6 +42,11 @@ class LoginActivity : AppCompatActivity() {
 
     // Sign In Button
     binding.signInButton.setOnClickListener {
+
+      if (auth.currentUser != null){
+        profileActivity()
+      }
+
       val email: String = binding.loginEmail.text.toString()
       val pass: String = binding.loginPass.text.toString()
 
@@ -186,9 +190,12 @@ class LoginActivity : AppCompatActivity() {
     }
   }
 
-  fun profileActivity() {
+  private fun profileActivity() {
     val intent = Intent(this, ProfileActivity::class.java)
-    startActivity(intent)
+    if(shouldUpRecreateTask(intent)){
+      startActivity(intent)
+    }
+    navigateUpTo(intent)
   }
 
   companion object {

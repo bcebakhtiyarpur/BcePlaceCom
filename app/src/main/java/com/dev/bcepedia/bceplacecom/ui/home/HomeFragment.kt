@@ -7,25 +7,33 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.ActivityNavigator
 import androidx.navigation.fragment.findNavController
 import com.dev.bcepedia.bceplacecom.R
 import com.dev.bcepedia.bceplacecom.databinding.HomeFragmentBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class HomeFragment : Fragment() {
 
   private lateinit var viewModel: HomeViewModel
   private lateinit var homeFragmentBinding: HomeFragmentBinding
+  private lateinit var auth: FirebaseAuth
 
   override fun onCreateView(
     inflater: LayoutInflater, container: ViewGroup?,
     savedInstanceState: Bundle?
-  ): View? {
+  ): View {
+
+    auth = Firebase.auth
 
     homeFragmentBinding = DataBindingUtil.inflate(
       inflater, R.layout.home_fragment, container, false)
 
     homeFragmentBinding.homeSignButton.setOnClickListener {
+      if(auth.currentUser != null){
+        findNavController().navigate(R.id.action_homeFragment_to_profileActivity)
+      }
       findNavController().navigate(R.id.action_homeFragment_to_loginActivity)
     }
 

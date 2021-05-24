@@ -20,25 +20,25 @@ class ProfileActivity : AppCompatActivity() {
     profileBinding = DataBindingUtil.setContentView(this, R.layout.activity_profile)
     auth = Firebase.auth
 
-    if(auth.currentUser == null){
+    if (auth.currentUser == null) {
       loginActivity()
     }
 
     profileBinding.profileEmail.text = auth.currentUser!!.email.toString()
 
     // Sign out
-    profileBinding.signOutButton.setOnClickListener{
-      fireBaseLogOut()
+    profileBinding.signOutButton.setOnClickListener {
+      Firebase.auth.signOut()
+      loginActivity()
     }
   }
-  fun fireBaseLogOut(){
-    Firebase.auth.signOut()
-    loginActivity()
-  }
 
-  fun loginActivity(){
+  private fun loginActivity(){
     val intent = Intent(this, LoginActivity::class.java)
-    startActivity(intent)
+    if(shouldUpRecreateTask(intent)){
+      startActivity(intent)
+    }
+    navigateUpTo(intent)
   }
 
 }

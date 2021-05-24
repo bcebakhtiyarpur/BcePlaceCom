@@ -10,9 +10,23 @@
         <action
             android:id="@+id/action_homeFragment_to_loginActivity"
             app:destination="@id/loginActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_signUpActivity"
+            app:destination="@id/signUpActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileActivity"
+            app:destination="@id/profileActivity" />
     </fragment>
     <activity
         android:id="@+id/loginActivity"
         android:name="com.dev.bcepedia.bceplacecom.ui.auth.LoginActivity"
         android:label="LoginActivity" />
+    <activity
+        android:id="@+id/signUpActivity"
+        android:name="com.dev.bcepedia.bceplacecom.ui.auth.SignUpActivity"
+        android:label="SignUpActivity" />
+    <activity
+        android:id="@+id/profileActivity"
+        android:name="com.dev.bcepedia.bceplacecom.ui.auth.ProfileActivity"
+        android:label="ProfileActivity" />
 </navigation>
