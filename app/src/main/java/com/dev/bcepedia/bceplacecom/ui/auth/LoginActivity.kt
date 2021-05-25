@@ -131,7 +131,7 @@ class LoginActivity : AppCompatActivity() {
   private fun firebaseAuthWithGoogle(token: String) {
     val credential = GoogleAuthProvider.getCredential(token, null)
     auth.signInWithCredential(credential)
-      .addOnCompleteListener(this) { it ->
+      .addOnCompleteListener(this) {
         if (it.isSuccessful) {
           // Sign In Successful
           val user = auth.currentUser
