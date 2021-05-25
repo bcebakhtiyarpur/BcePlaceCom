@@ -17,10 +17,6 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import com.dev.bcepedia.bceplacecom.ui.onBoarding.OnBoardingActivity
 
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- */
 class SplashActivity : AppCompatActivity() {
 
   private lateinit var mDelayHandler: Handler

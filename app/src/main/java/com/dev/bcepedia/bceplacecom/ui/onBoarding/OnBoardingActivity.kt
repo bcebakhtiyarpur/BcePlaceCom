@@ -1,6 +1,5 @@
 package com.dev.bcepedia.bceplacecom.ui.onBoarding
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -123,7 +122,7 @@ class OnBoardingActivity : AppCompatActivity() {
     })
   }
 
-  // setup the
+  // setup the Page Controller
   private fun setUiPageViewController() {
     dotsCount = mAdapter!!.count
     dots = arrayOfNulls(dotsCount)
