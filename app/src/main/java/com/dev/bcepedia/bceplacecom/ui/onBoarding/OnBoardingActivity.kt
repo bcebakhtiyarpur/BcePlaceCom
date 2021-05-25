@@ -3,19 +3,17 @@ package com.dev.bcepedia.bceplacecom.ui.onBoarding
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
-import com.dev.bcepedia.bceplacecom.R
-import android.view.animation.AnimationUtils
-import android.view.animation.Animation
 import com.dev.bcepedia.bceplacecom.MainActivity
-import kotlin.system.exitProcess
+import com.dev.bcepedia.bceplacecom.R
 
 
 class OnBoardingActivity : AppCompatActivity() {

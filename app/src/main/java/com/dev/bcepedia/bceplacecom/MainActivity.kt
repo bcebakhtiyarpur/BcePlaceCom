@@ -2,20 +2,16 @@ package com.dev.bcepedia.bceplacecom
 
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.preference.PreferenceManager
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.dev.bcepedia.bceplacecom.databinding.ActivityMainBinding
 import com.dev.bcepedia.bceplacecom.ui.onBoarding.OnBoardingActivity
-import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
   private lateinit var activityMainBinding: ActivityMainBinding
-  var prefs: SharedPreferences? = null
+  private var prefs: SharedPreferences? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
