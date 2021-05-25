@@ -82,6 +82,7 @@ dependencies {
 
     //Glide
     implementation "com.github.bumptech.glide:glide:$version_glide"
+    implementation 'androidx.viewpager:viewpager:1.0.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
