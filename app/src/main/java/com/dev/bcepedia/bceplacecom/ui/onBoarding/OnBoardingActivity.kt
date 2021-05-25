@@ -1,5 +1,6 @@
 package com.dev.bcepedia.bceplacecom.ui.onBoarding
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -24,7 +25,9 @@ class OnBoardingActivity : AppCompatActivity() {
   private var mAdapter: OnBoardAdapter? = null
   private var btnGetStarted: Button? = null
   private var previousPos = 0
+  private var prevStarted: String = "yes"
   private var onBoardItems: ArrayList<OnBoardItem> = ArrayList()
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_on_boarding)
@@ -81,8 +84,10 @@ class OnBoardingActivity : AppCompatActivity() {
     val imageId =
       intArrayOf(R.drawable.onboard_page1, R.drawable.onboard_page2, R.drawable.onboard_page3)
     for (i in imageId.indices) {
-      val item = OnBoardItem(imageId[i], resources.getString(header[i]),
-        resources.getString(desc[i]))
+      val item = OnBoardItem(
+        imageId[i], resources.getString(header[i]),
+        resources.getString(desc[i])
+      )
 
       onBoardItems.add(item)
     }
@@ -145,11 +150,27 @@ class OnBoardingActivity : AppCompatActivity() {
     )
   }
 
+  override fun onResume() {
+    super.onResume()
+    val sharedPreferences = getSharedPreferences(
+      resources.getString(R.string.app_name), MODE_PRIVATE)
+    if (!sharedPreferences.getBoolean(prevStarted, false)) {
+      val editor = sharedPreferences.edit()
+      editor.putBoolean(prevStarted, true)
+      editor.apply()
+    } else {
+      val intent = Intent(this, MainActivity::class.java)
+      startActivity(intent)
+    }
+  }
+
   override fun onBackPressed() {
     val intent = Intent(Intent.ACTION_MAIN)
     intent.addCategory(Intent.CATEGORY_HOME)
     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
     startActivity(intent)
     finish()
+
   }
+
 }

@@ -15,6 +15,7 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import com.dev.bcepedia.bceplacecom.ui.onBoarding.OnBoardingActivity
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -26,11 +27,10 @@ class SplashActivity : AppCompatActivity() {
 
   private val mRunnable: Runnable = Runnable {
 
-    val intent = Intent(applicationContext, MainActivity::class.java)
+    val intent = Intent(applicationContext, OnBoardingActivity::class.java)
     startActivity(intent)
     finish()
   }
-
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -44,11 +44,6 @@ class SplashActivity : AppCompatActivity() {
     //Navigate with delay
     mDelayHandler.postDelayed(mRunnable, SPLASH_DELAY)
 
-  }
-
-  private fun startMainActivity(){
-    val intent = Intent(this, MainActivity::class.java)
-    startActivity(intent)
   }
 
   private fun hideSystemUI() {
@@ -77,7 +72,7 @@ class SplashActivity : AppCompatActivity() {
   }
 
   companion object{
-    val SPLASH_DELAY: Long = 2000
+    const val SPLASH_DELAY: Long = 2000
   }
 
 }
