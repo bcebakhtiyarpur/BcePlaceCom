@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dev.bcepedia.bceplacecom">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BcePlaceCom">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.onBoarding.OnBoardingActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_splash"
+            android:theme="@style/Theme.BcePlaceCom" />
+        <activity android:name=".ui.auth.ProfileActivity" />
+        <activity
+            android:name=".ui.auth.SignUpActivity"
+            android:label="@string/title_activity_sign_up"
+            android:theme="@style/Theme.BcePlaceCom" />
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:label="@string/title_activity_sign_in"
+            android:theme="@style/Theme.BcePlaceCom" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

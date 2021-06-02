@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15sp"
+        tools:context=".auth.LoginActivity">
+
+
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="56dp"
+            android:text="@string/login_welcome_back"
+            android:textSize="40sp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/new_hear_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:text="@string/login_new_here"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/login_email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.147" />
+
+        <TextView
+            android:id="@+id/sign_up_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:contextClickable="true"
+            android:textColor="@color/blue_500"
+            android:text="@string/login_sign_up"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/login_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.013"
+            app:layout_constraintStart_toEndOf="@+id/new_hear_text_view"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.144" />
+
+        <EditText
+            android:id="@+id/login_email"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="64dp"
+            android:autofillHints="Email"
+            android:ems="10"
+            android:hint="@string/login_id"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toTopOf="@+id/login_pass"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/login_pass"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="280dp"
+            android:autofillHints="Password"
+            android:ems="10"
+            android:hint="@string/login_password"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/sign_in_button"
+            android:layout_width="167dp"
+            android:layout_height="60dp"
+            android:shadowColor="@color/white"
+            android:text="@string/login_sign_in"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_pass"
+            app:layout_constraintVertical_bias="0.19" />
+
+        <ImageView
+            android:id="@+id/login_using_github"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="76dp"
+            android:layout_marginEnd="40dp"
+            android:contentDescription="@string/github_login"
+            android:background="@drawable/github_sign_in_logo_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/login_using_google" />
+
+        <ImageView
+            android:id="@+id/login_using_google"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="45sp"
+            android:layout_marginBottom="76dp"
+            android:background="@drawable/google_sign_in_logo"
+            android:contentDescription="@string/google_login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/login_using_github"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

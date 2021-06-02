@@ -1,3 +1,42 @@
 <resources>
     <string name="app_name">BcePlaceCom</string>
+    <string name="login_welcome_back">Welcome Back</string>
+    <string name="login_new_here">New Here</string>
+    <string name="login_sign_up">Sign Up</string>
+    <string name="login_id">Email</string>
+    <string name="login_password">Login Password</string>
+    <string name="login_sign_in">Sign In</string>
+    <string name="google_login">Google Login</string>
+    <string name="github_login">Github Login</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="title_activity_sign_in">LogInActivity</string>
+    <string name="sign_up_sign_up_button">Sign Up</string>
+    <string name="sign_up_terms_of_use">By Clicking You are agreeing to Terms of Uses</string>
+    <string name="sign_up_already_signed_in">Already Sign In</string>
+    <string name="sign_up_login_in_here">Login in here</string>
+    <string name="splash_screen_image">Splash Screen Image</string>
+    <string name="profile_welcome">Welcome</string>
+    <string name="profile_sign_out">Sign Out</string>
+    <string name="home_sign_in_button">Sign In</string>
+    <string name="title_activity_splash">App Bar</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="splash_bce_logo">Splash BCE Logo</string>
+    <string name="splash_app_desc">BCE Place Com</string>
+    <string name="splash_college_name">Bakhtiyarpur College of Engineering</string>
+    <string name="on_board_image">On Board Image</string>
+    <string name="on_board_intro">Welcome to BCE PLACE COM</string>
+    <string name="on_board_intro_desc">This Application is created as an intention to provide student easier access to internship and Jobs</string>
+    <string name="on_board_get_start">Get Start</string>
+
+    <!-- On Boarding Headers -->
+    <string name="ob_header1">Get Start</string>
+    <string name="ob_header2">Intro</string>
+    <string name="ob_header3">Last Screen</string>
+
+    <string name="ob_desc1">Get Start Description</string>
+    <string name="ob_desc2">Intro Description</string>
+    <string name="ob_desc3">Last Screen Description</string>
+
+
 </resources>
